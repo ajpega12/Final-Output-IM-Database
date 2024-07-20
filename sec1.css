@@ -1,0 +1,120 @@
+/* Global styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-image: url(bg2.jpg);
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  /* Global Styles */
+
+
+  h1, h2 {
+    margin-bottom: 10px;
+  }
+  
+  /* Header Styles */
+  
+  .header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  /* Student Form Styles */
+  
+  .student-form {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .student-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .student-form input[type="text"],
+  .student-form input[type="number"],
+  .student-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .student-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .student-form button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .student-form button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Student List Styles */
+  
+  #student-list {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #student-list-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #student-list-ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #student-list-ul li:last-child {
+    border-bottom: none;
+  }
+  
+  #student-list-ul .edit-btn,
+  #student-list-ul .delete-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #student-list-ul .edit-btn:hover,
+  #student-list-ul .delete-btn:hover {
+    background-color: #3e8e41;
+  }

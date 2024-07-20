@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!--Title-->
+    <title>Simple Database Management System</title>
+    <!-- CSS File-->
+</head>
+<body style="background-color: #FCC1DB">
+    <CENTER><h2 style="font-family: 'poppins';">Student Management System</h2></CENTER>
+    <!--Table-->
+    <table>
+        <!--Row-1-->
+        <tr>
+            <!--Column-1-->
+            <td>
+                <!--Form-->
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <h3>Student Form</h3>
+                    <!--div-1-->
+                    <div>
+                        <label>Full Name</label>
+                        <!--Validation Error-->
+                        <label class="validation-error hide" id="userNamevalidationError">This field is required</label>
+                        <!--Input User Name-->
+                        <input type="text" name="userName" id="userName" placeholder="Enter the user Name">
+                    </div>
+                    <!--div-2-->
+                    <div>
+                        <label>Student Id</label>
+                        <!--Validation Error-->
+                        <label class="validation-error hide" id="rollNovalidationError">This field is required</label>
+                        <!--Input Roll No-->
+                        <input type="text" name="rollNo" id="rollNo" placeholder="Enter the Student Id">
+                    </div>
+                    <!--div-3-->
+                    <div>
+                        <label>Student Course</label>
+                        <!--Validation Error-->
+                        <label class="validation-error hide" id="stdClassvalidationError">This field is required</label>
+                        <!--Input Student Class-->
+                        <input type="text" name="stdClass" id="stdClass" placeholder="Enter the Student Course">
+                    </div>
+                    <!--div-4-->
+                    <div>
+                        <label>Total Subject</label>
+                        <!--Validation Error-->
+                        <label class="validation-error hide" id="tsubvalidationError">This field is required</label>
+                        <!--Input Total Subject-->
+                        <input type="number" name="tsub" id="tsub" placeholder="Enter the Total Subjects">
+                    </div>
+                    <!--div-5-->
+                    <div>
+                        <label>Age</label>
+                        <!--Validation Error-->
+                        <label class="validation-error hide" id="agevalidationError">This field is required</label>
+                        <!--Input Age-->
+                        <input type="number" name="age" id="age" placeholder="Enter the Age">
+                    </div>
+                    <!--div-6-->
+                    <div>
+                        <label>Student Picture</label>
+                        <!--Validation Error-->
+                        <label class="validation-error hide" id="picturevalidationError">This field is required</label>
+                        <!--Input Picture-->
+                        <input type="file" name="picture" id="picture" accept="image/*">
+                    </div>
+                    <!--div-7-->
+                    <div class="form-action-buttons">
+                        <!--Input Button-->
+                        <input style="background: -webkit-linear-gradient(right, #a445b2, #fa4299, #a445b2, #fa4299); color: white; font-family: 'poppins';" type="submit" value="Add Student">
+                    </div>
+                </form>
+            </td>
+            <!--Column-2-->
+            <td>
+                <!--Nested Table-->
+                <table class="list" id="stdlist" style="background: -webkit-linear-gradient(right, #a445b2, #fa4299, #a445b2, #fa4299); color: white;">
+                    <!--Table Head-->
+                    <thead>
+                        <!--Row-2-->
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Student Id</th>
+                            <th>Student Course</th>
+                            <th>Total Subject</th>
+                            <th>Age</th>
+                            <th>Picture</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <!--Table Body-->
+                    <tbody>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <center><p style="color:black; font-family: 'poppins';" ><b>@EVEN TRANS</b></p></center>
+    <!-- JS File-->
+    <style>
+        body > table {
+            width: 100%;
+            font-family: 'poppins';
+        }
+
+        table {
+            border-collapse: collapse;
+            text-align: center;
+        }
+        table.list {
+            width:100%;
+            text-align: center;
+        }
+        table.list td {
+            text-align: center;
+        }
+        td, th {
+            border: 5px solid white;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even), table.list thead>tr {
+            background: -webkit-linear-gradient(right, #fa4299, #a445b2);
+            color: #000;
+        }
+        input[type=text], input[type=number] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            width: 30%;
+            background-color: #ddd;
+            color: #000;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        form {
+            background: -webkit-linear-gradient(right, #fa4299, #a445b2);
+            padding: 10px;
+        }
+        form div.form-action-buttons {
+            text-align: center;
+        }
+        a {
+            cursor: pointer;
+            text-decoration: underline;
+            color: white;
+            margin-right: 4px;
+        }
+        label.validation-error {
+            color: red;
+            margin-left: 5px;
+        }
+        .hide {
+            display:none;
+        }
+        img {
+            max-width: 100px;
+            height: auto;
+        }
+    </style>
+    <script src="js2.js"></script>
+</body>
+</html>

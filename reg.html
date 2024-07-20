@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Register Form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="register-form">
+            <h2>Register Form</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="firstname">First Name:</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmpassword">Confirm Password:</label>
+                    <input type="password" id="confirmpassword" name="confirmpassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentid">Student ID:</label>
+                    <input type="text" id="studentid" name="studentid" required>
+                </div>
+                <div class="form-group">
+                    <label for="department">Organization:</label>
+                    <select id="department" name="department" required>
+                        <option value="">Select Organization</option>
+                        <option value="ATS">ATS</option>
+                        <option value="JIECEP">JIECEP</option>
+                        <option value="CESS">CESS</option>
+                        <option value="JPMAP">JPMAP</option>
+                        <option value="JPSME">JPSME</option>
+                        <option value="AEES">AEES</option>
+                        <option value="AES">AES</option>
+                        <option value="JPIA">JPMAP</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="program">Program:</label>
+                    <select id="program" name="program" required>
+                        <option value="">Select Program</option>
+                        <option value="BS in Accountancy">BS in Accountancy</option>
+                        <option value="BS in Secondary Education">BS in Secondary Education</option>
+                        <option value="BS In Entrepreneurship">BS In Entrepreneurship</option>
+                        <option value="BS In Business Ad  Major in Human Resources">BS In Business Ad  Major in Human Resources </option>
+                        <option value="BS In Mechanical Engineering">BS In Mechanical Engineering</option>
+                        <option value="BBS In Electronics Engineering">BS In Electronics Engineering</option>
+                        <option value="BBS In Electrical Engineering">BS In Electrical Engineering</option>
+                        <option value="Diploma in Information Technology">Diploma in Information Technology</option>
+                        <option value="Diploma in Electrical Engineering Technology">Diploma in Electrical Engineering Technology</option>
+                        <option value="Diploma in Office Management Technology">Diploma in Office Management Technology</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Register">
+                    <button type="button" onclick="window.location.href='index.html'">Back to Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        /* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(bg2.jpg);
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    font-family: 'poppins';
+}
+ h2 {
+    text-align: center;
+ }
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: -webkit-linear-gradient(right, #fa4299, #a445b2);
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-form {
+    margin: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(right, #fa4299, #a445b2);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background: -webkit-linear-gradient(right, #fa4299, #a445b2);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="button"] {
+    background: -webkit-linear-gradient(right, #fa4299, #a445b2);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+    </style>
+
+    <script>
+        // script.js
+
+        const form = document.getElementById('register-form');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const firstname = document.getElementById('firstname').value;
+    const lastname = document.getElementById('lastname').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmpassword = document.getElementById('confirmpassword').value;
+    const studentid = document.getElementById('studentid').value;
+    const department = document.getElementById('department').value;
+    const program = document.getElementById('program').value;
+
+    // Validate form fields
+    if (firstname === '' || lastname === '' || email === '' || password === '' || confirmpassword === '' || studentid === '' || department === '' || program === '') {
+        window.location.href = 'reg.html'; // stay on the same page
+        return;
+    }
+
+    if (password!== confirmpassword) {
+        window.location.href = 'reg.html'; // stay on the same page
+        return;
+    }
+
+    // Create a new user object
+    const user = {
+        firstname,
+        lastname,
+        email,
+        password,
+        studentid,
+        department,
+        program
+    };
+
+    // Send a request to the server to register the user
+    fetch('/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+   .then(response => response.json())
+   .then(data => {
+        if (data.success) {
+            window.location.href = 'info.html'; // redirect to info.html
+        } else {
+            window.location.href = 'reg.html'; // stay on the same page
+        }
+    })
+   .catch(error => {
+        console.error(error);window.location.href = 'reg.html'; // stay on the same page
+    });
+});
+
+    </script>
+</body>
+</html>
